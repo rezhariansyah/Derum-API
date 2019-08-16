@@ -25,6 +25,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       connection.query('INSERT INTO users SET ?', data, (err, result) => {
         if (!err) {
+          connection.query('INSERT INTO scores SET ?',{id_user : result.insertId, score : 0})
           resolve(result)
         } else {
           reject(err)

@@ -9,6 +9,7 @@ const app = express();
 const port = process.env.SERVER_PORT || 3333;
 
 const userRoute = require("./src/routes/user");
+const scoreRoute = require("./src/routes/score");
 
 const whiteList = process.env.WHITELIST;
 
@@ -39,3 +40,4 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })); // body type
 
 app.use('/user', userRoute);
+app.use('/score', scoreRoute)

@@ -18,7 +18,6 @@ module.exports = {
     });
   },
 
-  // Using Promise
   userDetail: (req, res) => {
     const userid = req.params.userid;
 
